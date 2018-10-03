@@ -16,11 +16,11 @@ namespace BtOOP2
                 new Thu(){ LoaiThu = LT.Thuong, MaBuuPham = "thu thuong", TenBuuPham = "thuthuong", NguoiNhan = "QC"}
             };
 
-            IBuuDien bd = new BuuDien()
+            BuuDien bd = new BuuDien()
             {
                 DiaChi = "abc 123",
                 MaBuuDien = "abc 321",
-                TenBuuDien = "buu dien lz",
+                TenBuuDien = "buu dien",
                 LstBuuPham = lst
             };
 
