@@ -6,35 +6,20 @@ using System.Threading.Tasks;
 
 namespace BtOOP2
 {
-    class HangHoa : BuuPham
+    class HangHoa : BuuPham, IBuuPham
     {
-        private int countHangHoa = 0;
         public float KhoiLuong { get; set; }
 
-        public HangHoa() { countHangHoa++; }
 
-        public HangHoa(string maBuuPham,
-            string tenBuuPham,
-            string nguoiNhan,
-            float khoiLuong)
-            :base(maBuuPham,tenBuuPham,nguoiNhan)
+        public override int Price()
         {
-            countHangHoa++;
-            KhoiLuong = khoiLuong;
+            return Convert.ToInt16(1000 * KhoiLuong);
         }
 
-        public override void Print()
+        public override string ToString()
         {
-            base.Print();
-            Console.WriteLine("Khoi Luong :" + KhoiLuong);
+            return "Hang Hoa :" +this.Price();
         }
-        public override int Count()
-        {
-            return countHangHoa;
-        }
-        public override double Sum()
-        {
-            return KhoiLuong * 1000;
-        }
+
     }
 }
