@@ -10,8 +10,25 @@ namespace BtOOP2
     {
         static void Main(string[] args)
         {
-            BuuPham buuPham = new HangHoa("BP01", "Buu Pham A", "Doan Van Nhan", 3);
-            Console.WriteLine(buuPham.Sum());
+            List<BuuPham> lst = new List<BuuPham>() {
+                new Thu(){ LoaiThu = LT.Nhanh, MaBuuPham = "thu1", TenBuuPham = "thu1", NguoiNhan = "Nhan ml"},
+                new HangHoa(){ KhoiLuong = 10, TenBuuPham = "heroin", MaBuuPham = "heroin10kg", NguoiNhan = "Bao Nguyen"},
+                new Thu(){ LoaiThu = LT.Thuong, MaBuuPham = "thu thuong", TenBuuPham = "thuthuong", NguoiNhan = "QC"}
+            };
+
+            IBuuDien bd = new BuuDien()
+            {
+                DiaChi = "abc 123",
+                MaBuuDien = "abc 321",
+                TenBuuDien = "buu dien lz",
+                LstBuuPham = lst
+            };
+
+
+            bd.ShowPrice();
+            bd.ShowAll();
+            Console.WriteLine("So luong hang hoa: " + bd.CountProducts());
+            Console.WriteLine("So luong thu: " + bd.CountLetters());
         }
     }
 }

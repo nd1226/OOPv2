@@ -11,48 +11,18 @@ namespace BtOOP2
         Thuong,
         Nhanh
     }
-    public class Thu : BuuPham
+    public class Thu : BuuPham, IBuuPham
     {
-        private int countThu = 0;
         public LT LoaiThu { get; set; }
-        public Thu() { countThu++; }
 
-        public Thu(string maBuuPham,
-            string tenBuuPham,
-            string nguoiNhan,
-            LT loaiThu)
-            : base(maBuuPham, tenBuuPham, nguoiNhan)
+        public override int Price()
         {
-            countThu++;
-            LoaiThu = loaiThu;
+            return LoaiThu.Equals(LT.Thuong) ? 500 : 2000;
         }
 
-        public override void Print()
+        public override string ToString()
         {
-            base.Print();
-            if (LoaiThu == LT.Thuong)
-            {
-                Console.WriteLine("Loai thu : Thu thuong");
-            }
-            else
-                Console.WriteLine("Loai thu : Thu chuyen phat nhanh");
-        }
-
-        public override int Count()
-        {
-            return countThu;
-        }
-
-        public override double Sum()
-        {
-            int sum = 0;
-            if (LoaiThu == LT.Thuong)
-            {
-                sum = 2000;
-            }
-            else
-                sum = 500;
-            return sum;
+            return LoaiThu.Equals(LT.Thuong) ? "Thuong`: " + this.Price() : "Nhanh: " + this.Price();
         }
     }
 }

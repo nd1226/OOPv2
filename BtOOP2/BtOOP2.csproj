@@ -45,6 +45,8 @@
     <Compile Include="BuuDien.cs" />
     <Compile Include="BuuPham.cs" />
     <Compile Include="HangHoa.cs" />
+    <Compile Include="IBuuDien.cs" />
+    <Compile Include="IBuuPham.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Thu.cs" />
